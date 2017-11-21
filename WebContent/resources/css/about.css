@@ -1,0 +1,389 @@
+.card-body {
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.card-wrapper .face{
+    background-color: #FFF!important
+}
+
+.card-wrapper .back,
+.card-wrapper .front {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12)
+}
+
+.font-bold {
+    font-weight: 500
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300
+}
+
+.section-heading h1 {
+    font-size: 150%
+}
+
+@media (min-width:576px) {
+    .section-heading h1 {
+        font-size: 170%
+    }
+}
+
+@media (min-width:768px) {
+    .section-heading h1 {
+        font-size: 200%
+    }
+}
+
+@media (min-width:992px) {
+    .section-heading h1 {
+        font-size: 200%
+    }
+}
+
+@media (min-width:1200px) {
+    .section-heading h1 {
+        font-size: 250%
+    }
+}
+
+.card-wrapper .back .card-title {
+    cursor: pointer
+}
+
+.fb-ic {
+    color: #3B5998!important
+}
+
+.fb-ic:focus,
+.fb-ic:hover {
+    color: #3B5998
+}
+
+.tw-ic {
+    color: #55ACEE!important
+}
+
+.tw-ic:focus,
+.tw-ic:hover {
+    color: #55ACEE
+}
+
+.gplus-ic {
+    color: #DD4B39!important
+}
+
+.gplus-ic:focus,
+.gplus-ic:hover {
+    color: #DD4B39
+}
+
+
+.yt-ic {
+    color: #ED302F!important
+}
+
+.yt-ic:focus,
+.yt-ic:hover {
+    color: #ED302F
+}
+
+.li-ic {
+    color: #0082CA!important
+}
+
+.li-ic:focus,
+.li-ic:hover {
+    color: #0082CA
+}
+.pin-ic {
+    color: #C61118!important
+}
+
+.pin-ic:focus,
+.pin-ic:hover {
+    color: #C61118
+}
+
+.ins-ic {
+    color: #2E5E86!important
+}
+
+.ins-ic:focus,
+.ins-ic:hover {
+    color: #2E5E86
+}
+
+.git-ic {
+    color: #333!important
+}
+
+.git-ic:focus,
+.git-ic:hover {
+    color: #333
+}
+
+.comm-ic {
+    color: #30CFC0!important
+}
+
+.comm-ic:focus,
+.comm-ic:hover {
+    color: #30CFC0
+}
+
+.vk-ic {
+    color: #4C75A3!important
+}
+
+.vk-ic:focus,
+.vk-ic:hover {
+    color: #4C75A3
+}
+
+.dribbble-ic {
+    color: #EC4A89!important
+}
+
+.dribbble-ic:focus,
+.dribbble-ic:hover {
+    color: #EC4A89
+}
+
+.so-ic {
+    color: #ffac44!important
+}
+
+.so-ic:focus,
+.so-ic:hover {
+    color: #ffac44
+}
+
+.slack-ic {
+    color: #56b68b!important
+}
+
+.slack-ic:focus,
+.slack-ic:hover {
+    color: #56b68b
+}
+
+.email-ic {
+    color: #4B515D!important
+}
+
+.email-ic:focus,
+.email-ic:hover {
+    color: #4B515D
+}
+
+.icons-sm {
+    padding: .5rem;
+    margin: .5rem;
+    font-size: 1.2rem
+}
+
+.card-wrapper {
+    margin: 0;
+    min-height: 500px;
+    position: relative;
+    -webkit-perspective: 800px;
+    perspective: 800px
+}
+
+.card-wrapper .face {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.card-wrapper .face h4 {
+    margin-bottom: 15px
+}
+
+.card-wrapper .face h5 {
+    margin-top: 30px
+}
+
+.card-wrapper .face .content {
+    text-align: left;
+    padding: 15px
+}
+
+.card-wrapper .face .content p {
+    margin-bottom: 30px
+}
+
+.card-wrapper .face .content .rotate-btn {
+    padding: 1rem;
+    margin-right: -8px;
+    float: right;
+    font-size: 1.2rem
+}
+
+.card-wrapper .card-up {
+    overflow: hidden;
+    height: 50%
+}
+
+.card-wrapper .card-up img {
+    min-width: 400px
+}
+
+.card-wrapper .avatar {
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    margin: -65px auto 0;
+    overflow: hidden;
+    width: 120px
+}
+
+.card-wrapper .avatar img {
+    border: 5px solid #fff;
+    background: #FFF;
+    width: 100%
+}
+
+.card-wrapper .card-rotating {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d
+}
+
+.card-wrapper .card-rotating .content {
+    position: relative
+}
+
+.card-wrapper .card-rotating .content .rotate-btn {
+    position: absolute;
+    right: 8px;
+    top: 0
+}
+
+.card-wrapper .fa-repeat,
+.card-wrapper .fa-undo {
+    font-size: 20px;
+    margin-top: 30px
+}
+
+.card-wrapper .fa-undo {
+    margin-top: 30px
+}
+
+.card-wrapper .back,
+.card-wrapper .front {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s
+}
+
+.card-wrapper .back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    padding: 1rem
+}
+
+.card-wrapper .back .card-title i {
+    color: #9e9e9e;
+    position: absolute;
+    right: 20px
+}
+
+.card-wrapper .card-rotating.effect__click.flipped .front {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+.card-wrapper .card-rotating.effect__click.flipped .back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-heading {
+    text-align: center
+}
+
+.section .section-heading {
+    margin-top: 2rem;
+    margin-bottom: 4rem
+}
+
+.section-heading h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem
+}
+
+.section-heading p {
+    margin-bottom: 3rem;
+    margin-right: 15%;
+    margin-left: 15%
+}
+
+.section-description {
+    color: #757575;
+    margin-bottom: 4rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center
+}
+
+@media (max-width:992px) {
+    .section-description {
+        margin-left: 5%;
+        margin-right: 5%
+    }
+}
+
+.section h4 {
+    font-weight: 400
+}
+
+.section .card-wrapper .fa-repeat,
+.section .card-wrapper .fa-undo {
+    font-size: 15px
+}
+
+.card-body h3,
+.card-body h5 {
+    font-weight: 400;
+    margin-bottom: 1rem
+}
+
+.card-body h4 {
+    font-weight: 500;
+    margin-bottom: 1rem
+}
+
+.card-body a h5 {
+    font-size: 1rem
+}
+
+.inline-ul>li {
+    display: inline
+}
+
+.list-inline-div>div {
+    display: inline-block
+}
