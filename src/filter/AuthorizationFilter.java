@@ -31,9 +31,6 @@ public class AuthorizationFilter implements Filter {
 			HttpServletRequest req = (HttpServletRequest) request;
 			HttpServletResponse res = (HttpServletResponse) response;
 			HttpSession ses = req.getSession();
-			
-			System.out.println(ses);
-			System.out.println(ses.getAttribute("user"));
 
 			String reqURI = req.getRequestURI();
 			if (reqURI.endsWith("/login.xhtml")
