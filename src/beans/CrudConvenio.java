@@ -1,4 +1,4 @@
-package controller;
+package beans;
 
 import javax.faces.bean.ManagedBean;
 
@@ -10,7 +10,7 @@ public class CrudConvenio {
 	private String id;
 	private String descricao;
 	
-	Fachada fachada = Fachada.getInstance();
+	Fachada fachada = new Fachada();
 	Convenio convenio = new Convenio();
 	String mensagem;
 

@@ -87,7 +87,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b:image name="assets/images/users/1.jpg" alt="user" styleClass="profile-pic m-r-10"></b:image>Markarn Doe</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b:image name="assets/images/users/1.jpg" alt="user" styleClass="profile-pic m-r-10"></b:image><h:outputText value="#{login.sessionUser.username}"></h:outputText></a>
                         </li>
                     </ul>
                 </div>
@@ -128,9 +128,16 @@
             <!-- End Sidebar scroll-->
             <!-- Bottom points-->
             <div class="sidebar-footer">
+            		<h:form>
                 <!-- item--><a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
                 <!-- item--><a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a> </div>
+                <!-- item-->
+                <h:commandLink action="#{login.logout}" styleClass="link" immediate="true">
+	                <f:passThroughAttribute name="data-toggle" value="tooltip" />
+	                <f:passThroughAttribute name="title" value="Logout" />
+	                <i class="mdi mdi-power"></i>
+                </h:commandLink>
+                </h:form></div>
             <!-- End Bottom points-->
         </aside>
         <!-- ============================================================== -->
