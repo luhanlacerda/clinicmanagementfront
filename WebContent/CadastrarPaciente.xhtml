@@ -14,19 +14,28 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Secretaria" />
+							<h:outputText value="Gerenciador de Paciente" />
 						</h3>
 						<hr />
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.nome}">
+								value="#{crudPaciente.paciente.nome}">
 								<f:passThroughAttribute name="placeholder" value="Nome" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
 						</div>
+
+						<div class="form-group">
+							<h:selectOneMenu value="#{crudPaciente.selectedConvenio}"
+								converter="#{convenioConverter}">
+								<f:selectItems value="#{crudPaciente.convenios}" var="convenio"
+									itemValue="#{convenio}" itemLabel="#{convenio.descricao}" />
+							</h:selectOneMenu>
+						</div>
+
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.cpf}">
+								value="#{crudPaciente.paciente.cpf}">
 								<f:passThroughAttribute name="placeholder" value="CPF" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -34,7 +43,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.rg}">
+								value="#{crudPaciente.paciente.rg}">
 								<f:passThroughAttribute name="placeholder" value="RG" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -42,7 +51,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.logradouro}">
+								value="#{crudPaciente.paciente.endereco.logradouro}">
 								<f:passThroughAttribute name="placeholder" value="Logradouro" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -50,7 +59,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.numero}">
+								value="#{crudPaciente.paciente.endereco.numero}">
 								<f:passThroughAttribute name="placeholder" value="Número" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -58,7 +67,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.complemento}">
+								value="#{crudPaciente.paciente.endereco.complemento}">
 								<f:passThroughAttribute name="placeholder" value="Complemento" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -66,7 +75,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.bairro}">
+								value="#{crudPaciente.paciente.endereco.bairro}">
 								<f:passThroughAttribute name="placeholder" value="Bairro" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -74,7 +83,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.cidade}">
+								value="#{crudPaciente.paciente.endereco.cidade}">
 								<f:passThroughAttribute name="placeholder" value="Cidade" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -82,7 +91,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.uf}">
+								value="#{crudPaciente.paciente.endereco.uf}">
 								<f:passThroughAttribute name="placeholder" value="UF" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -90,7 +99,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.cep}">
+								value="#{crudPaciente.paciente.endereco.cep}">
 								<f:passThroughAttribute name="placeholder" value="CEP" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -98,7 +107,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.endereco.pais}">
+								value="#{crudPaciente.paciente.endereco.pais}">
 								<f:passThroughAttribute name="placeholder" value="País" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -106,7 +115,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.contato}">
+								value="#{crudPaciente.paciente.contato}">
 								<f:passThroughAttribute name="placeholder" value="Contato" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
@@ -114,7 +123,7 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.dtNascimento}">
+								value="#{crudPaciente.paciente.dtNascimento}">
 								<f:passThroughAttribute name="placeholder"
 									value="Data de Nascimento" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
@@ -124,27 +133,28 @@
 
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudSecretaria.secretaria.email}">
+								value="#{crudPaciente.paciente.email}">
 								<f:passThroughAttribute name="placeholder" value="E-Mail" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
 						</div>
 
-						<h:outputText value="Estado Civil: " />
-						<h:selectOneMenu value="#{crudSecretaria.secretaria.estadoCivil}">
-							<f:selectItem itemLabel="Selecione" />
-							<f:selectItems value="#{crudSecretaria.estadoCivis}" var="a"
-								itemValue="#{a}" itemLabel="#{a.label}" />
-						</h:selectOneMenu>
+						<div class="form-group">
+							<h:selectOneMenu styleClass="form-control"
+								value="#{crudPaciente.paciente.estadoCivil}">
+								<f:selectItem itemLabel="Estado Civil" itemValue="#{null}" />
+								<f:selectItems value="#{crudSecretaria.estadoCivis}" var="a"
+									itemValue="#{a}" itemLabel="#{a.label}" />
+							</h:selectOneMenu>
+						</div>
 
 						<div class="text-right">
 							<h:commandButton style="margin: 0 !important" value="Cadastrar"
-								action="#{crudSecretaria.cadastrar}"
-								styleClass="btn btn-primary" />
+								action="#{crudPaciente.cadastrar}" styleClass="btn btn-primary" />
 							<h:commandButton style="margin: 0 !important" value="Editar"
-								action="#{crudSecretaria.editar}" styleClass="btn btn-primary" />
+								action="#{crudPaciente.editar}" styleClass="btn btn-primary" />
 							<br />
-							<h:commandLink action="ListarSecretaria" value="Voltar" />
+							<h:commandLink action="ListarPaciente" value="Voltar" />
 						</div>
 					</h:form>
 				</div>

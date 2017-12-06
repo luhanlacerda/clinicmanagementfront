@@ -14,23 +14,30 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Especialidade" />
+							<h:outputText value="Gerenciador de Login" />
 						</h3>
 						<hr />
 						<div class="form-group">
 							<h:inputText styleClass="form-control"
-								value="#{crudEspecialidade.especialidade.descricao}">
-								<f:passThroughAttribute name="placeholder" value="Descrição" />
+								value="#{crudLogin.login.username}">
+								<f:passThroughAttribute name="placeholder" value="Username" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:inputText>
+						</div>
+						<div class="form-group">
+							<h:inputText styleClass="form-control"
+								value="#{crudLogin.login.password}">
+								<f:passThroughAttribute name="placeholder" value="Password" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
 						</div>
 						<div class="text-right">
 							<h:commandButton style="margin: 0 !important" value="Cadastrar"
-								action="#{crudEspecialidade.cadastrar}" styleClass="btn btn-primary" />
+								action="#{crudLogin.cadastrar}" styleClass="btn btn-primary" />
 							<h:commandButton style="margin: 0 !important" value="Editar"
-								action="#{crudEspecialidade.editar}" styleClass="btn btn-primary" />
+								action="#{crudLogin.editar}" styleClass="btn btn-primary" />
 							<br />
-							<h:commandLink action="ListarEspecialidade" value="Voltar" />
+							<h:commandLink action="ListarLogin" value="Voltar" />
 						</div>
 					</h:form>
 				</div>

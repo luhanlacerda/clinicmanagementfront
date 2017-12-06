@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layout.xhtml" lang="en">
+	<ui:define name="content">
+		<div class="container">
+			<div class="row">
+				<div
+					style="background-color: #FFFFFF; padding: 20px; float: none; margin: 0 auto;"
+					class="col-md-6 rounded">
+					<h:form>
+						<h3 class="text-center">
+							<h:outputText value="Gerenciador de Consulta" />
+						</h3>
+						<hr />
+						<div class="form-group">
+							<h:inputText styleClass="form-control"
+								value="#{crudConsulta.consulta.duracao}">
+								<f:passThroughAttribute name="placeholder" value="Duração" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:inputText>
+						</div>
+						<div class="form-group">
+							<h:inputText styleClass="form-control"
+								value="#{crudConsulta.consulta.horario}">
+								<f:passThroughAttribute name="placeholder" value="Horário" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:inputText>
+						</div>
+						<div class="form-group">
+							<h:textarea styleClass="form-control"
+								value="#{crudConsulta.consulta.observacoes}">
+								<f:passThroughAttribute name="placeholder" value="Observações" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:textarea>
+						</div>
+						<div class="form-group">
+							<h:textarea styleClass="form-control"
+								value="#{crudConsulta.consulta.receita}">
+								<f:passThroughAttribute name="placeholder" value="Receita" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:textarea>
+						</div>
+						<div class="form-group">
+							<h:inputText styleClass="form-control"
+								value="#{crudConsulta.consulta.horario}">
+								<f:passThroughAttribute name="placeholder" value="Horário" />
+								<f:passThroughAttribute name="autofocus" value="autofocus" />
+							</h:inputText>
+						</div>
+						<h:outputText value="Estado " />
+						<h:selectOneMenu value="#{crudConsulta.consulta.estadoConsulta}">
+							<f:selectItem itemLabel="Selecione" />
+							<f:selectItems value="#{crudConsulta.estadosConsulta}" var="a"
+								itemValue="#{a}" itemLabel="#{a.label}" />
+						</h:selectOneMenu>
+						<div class="text-right">
+							<h:commandButton style="margin: 0 !important" value="Cadastrar"
+								action="#{crudConsulta.cadastrar}" styleClass="btn btn-primary" />
+							<h:commandButton style="margin: 0 !important" value="Editar"
+								action="#{crudConsulta.editar}" styleClass="btn btn-primary" />
+							<br />
+							<h:commandLink action="ListarConsulta" value="Voltar" />
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:decorate>

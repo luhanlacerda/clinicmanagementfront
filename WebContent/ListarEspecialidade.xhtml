@@ -14,23 +14,23 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Convenio" />
+							<h:outputText value="Gerenciador de Especialidade" />
 						</h3>
 						<hr />
 						<div class="form-group">
-							<h:dataTable var="convenio"
-								value="#{crudConvenio.listaConvenios}">
+							<h:dataTable var="especialidade"
+								value="#{crudEspecialidade.listaEspecialidades}">
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="ID" />
 									</f:facet>
-									<h:outputText value="#{convenio.id}" />
+									<h:outputText value="#{especialidade.id}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="Descrição" />
 									</f:facet>
-									<h:outputText value="#{convenio.descricao}" />
+									<h:outputText value="#{especialidade.descricao}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
@@ -38,25 +38,26 @@
 									</f:facet>
 
 									<h:commandButton
-										action="#{crudConvenio.prepararEditarConvenio}" value="Editar" />
+										action="#{crudEspecialidade.prepararEditarEspecialidade}"
+										value="Editar" />
 
 								</h:column>
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="Excluir" />
 									</f:facet>
-
-									<h:commandButton action="#{crudConvenio.remover}"
-										value="Excluir" />
-
+									
+										<h:commandButton action="#{crudEspecialidade.remover}"
+											value="Excluir" />
+									
 								</h:column>
 							</h:dataTable>
 						</div>
 						<br />
 					</h:form>
 					<h:form>
-						<h:commandLink value="Novo Convenio"
-							action="#{crudConvenio.prepararNovoConvenio}" />
+						<h:commandLink value="Nova Especialidade"
+							action="#{crudEspecialidade.prepararNovaEspecialidade}" />
 					</h:form>
 				</div>
 			</div>
