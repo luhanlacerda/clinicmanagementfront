@@ -14,23 +14,23 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Convenio" />
+							<h:outputText value="Gerenciador de Login" />
 						</h3>
 						<hr />
 						<div class="form-group">
-							<h:dataTable var="convenio"
-								value="#{crudConvenio.listaConvenios}">
+							<h:dataTable var="login"
+								value="#{crudLogin.listaLogins}">
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="ID" />
 									</f:facet>
-									<h:outputText value="#{convenio.id}" />
+									<h:outputText value="#{login.id}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Descrição" />
+										<h:outputText value="Username" />
 									</f:facet>
-									<h:outputText value="#{convenio.descricao}" />
+									<h:outputText value="#{login.username}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
@@ -38,7 +38,7 @@
 									</f:facet>
 
 									<h:commandButton
-										action="#{crudConvenio.prepararEditarConvenio}" value="Editar" />
+										action="#{crudLogin.prepararEditarLogin}" value="Editar" />
 
 								</h:column>
 								<h:column>
@@ -46,7 +46,7 @@
 										<h:outputText value="Excluir" />
 									</f:facet>
 
-									<h:commandButton action="#{crudConvenio.remover}"
+									<h:commandButton action="#{crudLogin.remover}"
 										value="Excluir" />
 
 								</h:column>
@@ -55,8 +55,8 @@
 						<br />
 					</h:form>
 					<h:form>
-						<h:commandLink value="Novo Convenio"
-							action="#{crudConvenio.prepararNovoConvenio}" />
+						<h:commandLink value="Novo Login"
+							action="#{crudLogin.prepararNovoLogin}" />
 					</h:form>
 				</div>
 			</div>

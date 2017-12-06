@@ -1,14 +1,13 @@
 package beans;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 
+import classesBasicas.Convenio;
 import classesBasicas.Secretaria;
 import classesBasicas.incorporada.EstadoCivil;
 import negocios.Fachada;
@@ -20,12 +19,18 @@ public class CrudSecretaria {
 	private String mensagem;
 	private Secretaria secretaria;
 	private Fachada fachada;
+	private DataModel listaSecretarias;
 	private List<Secretaria> secretarias;
 
 	public CrudSecretaria() {
 		this.fachada = new Fachada();
 		this.secretaria = new Secretaria();
-		this.secretarias = new ArrayList<Secretaria>();
+	}
+	
+	public DataModel getListaSecretarias() throws Exception {
+		List<Secretaria> lista = new Fachada().getAll(Secretaria.class);
+		listaSecretarias = new ListDataModel(lista);
+		return listaSecretarias;
 	}
 
 	public String getMensagem() {
@@ -53,7 +58,7 @@ public class CrudSecretaria {
 	}
 
 	public List<Secretaria> getSecretarias() throws Exception {
-		this.secretarias = fachada.getAllByName(secretaria);
+		this.secretarias = fachada.getAll(Secretaria.class);
 		return secretarias;
 	}
 
@@ -61,28 +66,36 @@ public class CrudSecretaria {
 		this.secretarias = secretarias;
 	}
 
-	public String novo() {
+	public String prepararNovaSecretaria() {
 		secretaria = new Secretaria();
-		return "cadastrarsecretaria";
+		return "CadastrarSecretaria";
 	}
 
-	public String editar() {
-		return "cadastrarsecretaria";
+	public String prepararEditarSecretaria() {
+		secretaria = (Secretaria) (listaSecretarias.getRowData());
+		return "CadastrarSecretaria";
+	}
+	
+	public String editar() throws Exception {
+		fachada.update(secretaria);
+		mensagem = "Secretaria editada com sucesso";
+		return "ListarSecretaria";
 	}
 
-	public String remover() {
-		// REMOVER CLIENTE
-		return null;
+	public String remover() throws Exception {
+		Secretaria secretariaTemp = (Secretaria) (listaSecretarias.getRowData());
+		fachada.remove(secretariaTemp);
+		return "ListarSecretaria";
 	}
 
-	public String cadastrarSecretaria() throws Exception {
+	public String cadastrar() throws Exception {
 		if (!secretaria.getNome().trim().isEmpty()) {
 			fachada.insert(secretaria);
-			setMensagem("Convenio cadastrado com sucesso");
+			setMensagem("Secretaria cadastrada com sucesso");
 		} else {
-			setMensagem("Favor informar a descrição");
+			setMensagem("Favor informar o nome");
 		}
-		return mensagem;
+		return "ListarSecretaria";
 	}
 	
 	public EstadoCivil[] getEstadoCivis(){

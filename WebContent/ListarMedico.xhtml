@@ -14,49 +14,66 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Convenio" />
+							<h:outputText value="Gerenciador de Médico" />
 						</h3>
 						<hr />
 						<div class="form-group">
-							<h:dataTable var="convenio"
-								value="#{crudConvenio.listaConvenios}">
+							<h:dataTable var="medico" value="#{crudMedico.listaMedicos}">
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="ID" />
 									</f:facet>
-									<h:outputText value="#{convenio.id}" />
+									<h:outputText value="#{medico.id}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Descrição" />
+										<h:outputText value="Nome" />
 									</f:facet>
-									<h:outputText value="#{convenio.descricao}" />
+									<h:outputText value="#{medico.nome}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Contato" />
+									</f:facet>
+									<h:outputText value="#{medico.contato}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Especialidade" />
+									</f:facet>
+									<h:outputText value="#{medico.especialidade}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="CRM" />
+									</f:facet>
+									<h:outputText value="#{medico.crm}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="Editar" />
 									</f:facet>
-
-									<h:commandButton
-										action="#{crudConvenio.prepararEditarConvenio}" value="Editar" />
-
+									
+										<h:commandButton action="#{crudMedico.prepararEditarMedico}"
+											value="Editar" />
+									
 								</h:column>
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="Excluir" />
 									</f:facet>
-
-									<h:commandButton action="#{crudConvenio.remover}"
-										value="Excluir" />
-
+									
+										<h:commandButton action="#{crudMedico.remover}"
+											value="Excluir" />
+									
 								</h:column>
 							</h:dataTable>
 						</div>
 						<br />
 					</h:form>
 					<h:form>
-						<h:commandLink value="Novo Convenio"
-							action="#{crudConvenio.prepararNovoConvenio}" />
+						<h:commandLink value="Novo Médico"
+							action="#{crudMedico.prepararNovoMedico}" />
 					</h:form>
 				</div>
 			</div>

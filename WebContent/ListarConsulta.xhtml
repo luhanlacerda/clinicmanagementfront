@@ -14,23 +14,47 @@
 					class="col-md-6 rounded">
 					<h:form>
 						<h3 class="text-center">
-							<h:outputText value="Gerenciador de Convenio" />
+							<h:outputText value="Gerenciador de Consulta" />
 						</h3>
 						<hr />
 						<div class="form-group">
-							<h:dataTable var="convenio"
-								value="#{crudConvenio.listaConvenios}">
+							<h:dataTable var="consulta"
+								value="#{crudConsulta.listaConsultas}">
 								<h:column>
 									<f:facet name="header">
 										<h:outputText value="ID" />
 									</f:facet>
-									<h:outputText value="#{convenio.id}" />
+									<h:outputText value="#{consulta.id}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Descrição" />
+										<h:outputText value="Médico" />
 									</f:facet>
-									<h:outputText value="#{convenio.descricao}" />
+									<h:outputText value="#{consulta.medico}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Paciente" />
+									</f:facet>
+									<h:outputText value="#{consulta.paciente}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Estado" />
+									</f:facet>
+									<h:outputText value="#{consulta.estado}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Horário" />
+									</f:facet>
+									<h:outputText value="#{consulta.horario}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Secretária" />
+									</f:facet>
+									<h:outputText value="#{consulta.secretaria}" />
 								</h:column>
 								<h:column>
 									<f:facet name="header">
@@ -38,7 +62,7 @@
 									</f:facet>
 
 									<h:commandButton
-										action="#{crudConvenio.prepararEditarConvenio}" value="Editar" />
+										action="#{crudConsulta.prepararEditarConsulta}" value="Editar" />
 
 								</h:column>
 								<h:column>
@@ -46,7 +70,7 @@
 										<h:outputText value="Excluir" />
 									</f:facet>
 
-									<h:commandButton action="#{crudConvenio.remover}"
+									<h:commandButton action="#{crudConsulta.remover}"
 										value="Excluir" />
 
 								</h:column>
@@ -55,8 +79,8 @@
 						<br />
 					</h:form>
 					<h:form>
-						<h:commandLink value="Novo Convenio"
-							action="#{crudConvenio.prepararNovoConvenio}" />
+						<h:commandLink value="Nova Consulta"
+							action="#{crudConsulta.prepararNovaConsulta}" />
 					</h:form>
 				</div>
 			</div>
