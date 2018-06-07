@@ -12,7 +12,7 @@
 				<div
 					style="background-color: #FFFFFF; padding: 20px; float: none; margin: 0 auto;"
 					class="col-md-6 rounded">
-					<h:form>
+					<h:form id="form-convenios">
 						<h3 class="text-center">
 							<h:outputText value="Gerenciador de Convenio" />
 						</h3>
@@ -54,8 +54,8 @@
 						</div>
 						<br />
 					</h:form>
-					<h:form>
-						<h:commandLink value="Novo Convenio"
+					<h:form id="form-novo-convenio">
+						<h:commandLink id="btn-novo-convenio" value="Novo Convenio"
 							action="#{crudConvenio.prepararNovoConvenio}" />
 					</h:form>
 				</div>
