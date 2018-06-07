@@ -27,7 +27,7 @@
 
 	<div class="vertical-center">
 	  <div class="container">
-        <h:form class="form-signin rounded">
+        <h:form id="formulariologin" class="form-signin rounded">
           <h3 class="text-center"> <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             
@@ -55,7 +55,7 @@
             <h:messages styleClass="invalid-feedback"></h:messages>
           </div>
         
-          <h:commandButton action="#{login.validateLogin}" styleClass="btn btn-lg btn-primary btn-block" value="Sign in"></h:commandButton>
+          <h:commandButton id="btnlogar" action="#{login.validateLogin}" styleClass="btn btn-lg btn-primary btn-block" value="Sign in"></h:commandButton>
         </h:form>
 	  </div> <!-- /container -->
     </div>

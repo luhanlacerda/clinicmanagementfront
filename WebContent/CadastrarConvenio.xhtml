@@ -12,20 +12,20 @@
 				<div
 					style="background-color: #FFFFFF; padding: 20px; float: none; margin: 0 auto;"
 					class="col-md-6 rounded">
-					<h:form>
+					<h:form id="form-convenio">
 						<h3 class="text-center">
 							<h:outputText value="Gerenciador de Convênio" />
 						</h3>
 						<hr />
 						<div class="form-group">
-							<h:inputText styleClass="form-control"
+							<h:inputText id="descricao" styleClass="form-control"
 								value="#{crudConvenio.convenio.descricao}">
 								<f:passThroughAttribute name="placeholder" value="Descrição" />
 								<f:passThroughAttribute name="autofocus" value="autofocus" />
 							</h:inputText>
 						</div>
 						<div class="text-right">
-							<h:commandButton style="margin: 0 !important" value="Cadastrar"
+							<h:commandButton id="btn-cadastrar" style="margin: 0 !important" value="Cadastrar"
 								action="#{crudConvenio.cadastrar}" styleClass="btn btn-primary" />
 							<h:commandButton style="margin: 0 !important" value="Editar"
 								action="#{crudConvenio.editar}" styleClass="btn btn-primary" />
