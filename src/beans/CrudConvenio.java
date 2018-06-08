@@ -24,7 +24,7 @@ public class CrudConvenio {
 		this.fachada = new Fachada();
 		this.convenio = new Convenio();
 	}
-	
+
 	public DataModel getListaConvenios() throws Exception {
 		List<Convenio> lista = new Fachada().getAll(Convenio.class);
 		listaConvenios = new ListDataModel(lista);
@@ -65,7 +65,7 @@ public class CrudConvenio {
 		convenio = (Convenio) (listaConvenios.getRowData());
 		return "CadastrarConvenio";
 	}
-	
+
 	public String editar() throws Exception {
 		fachada.update(convenio);
 		mensagem = "Convenio editado com sucesso";
@@ -79,11 +79,20 @@ public class CrudConvenio {
 	}
 
 	public String cadastrar() throws Exception {
-		if (!convenio.getDescricao().trim().isEmpty()) {
-			fachada.insert(convenio);
-			setMensagem("Convenio cadastrado com sucesso");
+		if (convenio.getDescricao().isEmpty()) {
+			if (!convenio.getDescricao().trim().isEmpty()) {
+				fachada.insert(convenio);
+				setMensagem("Convenio cadastrado com sucesso");
+			} else {
+				setMensagem("Favor informar a descrição");
+			}
 		} else {
-			setMensagem("Favor informar a descrição");
+			if (!convenio.getDescricao().trim().isEmpty()) {
+				fachada.update(convenio);
+				setMensagem("Convenio atualizado com sucesso");
+			} else {
+				setMensagem("Favor informar a descrição");
+			}
 		}
 		return "ListarConvenio";
 	}
