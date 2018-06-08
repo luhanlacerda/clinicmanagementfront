@@ -8,11 +8,11 @@
 	template="/WEB-INF/template/layout.xhtml" lang="en">
 	<ui:define name="content">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="div-principal-cadastrar-convenio">
 				<div
 					style="background-color: #FFFFFF; padding: 20px; float: none; margin: 0 auto;"
 					class="col-md-6 rounded">
-					<h:form id="form-convenios">
+					<h:form >
 						<h3 class="text-center">
 							<h:outputText value="Gerenciador de Convenio" />
 						</h3>
@@ -54,7 +54,7 @@
 						</div>
 						<br />
 					</h:form>
-					<h:form id="form-novo-convenio">
+					<h:form>
 						<h:commandLink id="btn-novo-convenio" value="Novo Convenio"
 							action="#{crudConvenio.prepararNovoConvenio}" />
 					</h:form>
