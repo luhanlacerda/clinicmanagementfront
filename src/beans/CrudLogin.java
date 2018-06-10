@@ -92,7 +92,21 @@ public class CrudLogin {
 	}
 
 	public String cadastrar() throws Exception {
-		fachada.insert(login);
+		if (login.getUsername().isEmpty()) {
+			if (!login.getUsername().isEmpty() && !login.getPassword().isEmpty()) {
+				fachada.insert(login);
+				setMensagem("Login cadastrado com sucesso");
+			} else {
+				setMensagem("Favor informar username e password");
+			}
+		} else {
+			if (!login.getUsername().isEmpty() && !login.getPassword().isEmpty()) {
+				fachada.update(login);
+				setMensagem("Login atualizado com sucesso");
+			} else {
+				setMensagem("Favor informar username e password");
+			}
+		}
 		return "ListarLogin";
 	}
 	

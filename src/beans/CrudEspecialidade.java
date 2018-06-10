@@ -77,7 +77,7 @@ public class CrudEspecialidade {
 		especialidade = (Especialidade) (listaEspecialidades.getRowData());
 		return "CadastrarEspecialidade";
 	}
-	
+
 	public String editar() throws Exception {
 		fachada.update(especialidade);
 		mensagem = "Especialidade editada com sucesso";
@@ -91,11 +91,20 @@ public class CrudEspecialidade {
 	}
 
 	public String cadastrar() throws Exception {
-		if (!especialidade.getDescricao().trim().isEmpty()) {
-			fachada.insert(especialidade);
-			setMensagem("Especialidade cadastrada com sucesso");
+		if (especialidade.getDescricao().isEmpty()) {
+			if (!especialidade.getDescricao().isEmpty()) {
+				fachada.insert(especialidade);
+				setMensagem("Especialidade cadastrado com sucesso");
+			} else {
+				setMensagem("Favor informar a descrição");
+			}
 		} else {
-			setMensagem("Favor informar a descrição");
+			if (!especialidade.getDescricao().isEmpty()) {
+				fachada.update(especialidade);
+				setMensagem("Especialidade atualizado com sucesso");
+			} else {
+				setMensagem("Favor informar a descrição");
+			}
 		}
 		return "ListarEspecialidade";
 	}
